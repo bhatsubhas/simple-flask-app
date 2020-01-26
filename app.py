@@ -11,5 +11,5 @@ def get_repo_name(user):
 @app.route("/")
 def index():
     return {
-        "usage": "http://url-name/{repo-user}"
+        "usage": "http://your-app-url/{repo-user}"
     }

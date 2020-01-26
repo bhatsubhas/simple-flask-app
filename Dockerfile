@@ -6,8 +6,11 @@ RUN mkdir /app
 
 WORKDIR /app
 
-ADD . .
+ADD requirements.txt /app/requirements.txt
 
 RUN pip install -r requirements.txt
 
+ADD . /app
+
 CMD gunicorn app:app --bind 0.0.0.0:$PORT -w 2 --reload --access-logfile - 
+
