@@ -1,7 +1,15 @@
 from flask import Flask
+from flask import jsonify
+from repositories import get_repo_list
 
 app = Flask(__name__)
 
+@app.route("/<user>")
+def get_repo_name(user):
+    return jsonify(get_repo_list(user))
+
 @app.route("/")
-def hello_world():
-    return "<h1>Hello, World!</h1>"
+def index():
+    return {
+        "usage": "http://url-name/{repo-user}"
+    }
