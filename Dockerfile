@@ -12,5 +12,8 @@ RUN pip install -r requirements.txt
 
 ADD . /app
 
-CMD gunicorn app:app --bind 0.0.0.0:$PORT -w 2 --reload --access-logfile - 
+CMD gunicorn app:app --bind 0.0.0.0:80 -w 2 --reload --access-logfile - 
+
+EXPOSE 80
+
 
