@@ -2,8 +2,6 @@ version: '3'
 services:
     api_service:
         image: flask-app:latest
-        labels:
-            - "traefik.http.routers.api_service.rule=Host(`api_service.docker.localhost`)"
 
     reverse_proxy:
         image: "nginx:1.19.9-alpine"
