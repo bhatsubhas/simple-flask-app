@@ -1,4 +1,4 @@
-FROM python:3.7.6-alpine3.11
+FROM python:3.9.3-slim-buster
 
 RUN pip install --upgrade pip
 
